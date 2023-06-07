@@ -4,14 +4,17 @@ import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { LoginComponent } from './login/login.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { CrearCursoComponent } from './crear-curso/crear-curso.component';
+import { InscripcionesComponent } from './inscripciones/inscripciones.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'registrarse', component: RegistrarseComponent},
   {path: 'catalogo', component: CatalogoComponent},
-  {path: 'inscripciones', component: CatalogoComponent},
+  {path: 'inscripciones', component: InscripcionesComponent},
   {path: 'sidenav', component: SidenavComponent},
+  {path: 'crearCurso', component: CrearCursoComponent},
 
 ];
 

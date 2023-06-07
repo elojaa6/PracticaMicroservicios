@@ -8,22 +8,22 @@
   <section>
     <div class="form-box">
         <div class="form-value">
-            <form action="">
+            <form action="" [formGroup]="form" (ngSubmit)="login()">
                 <h2>Login</h2>
                 <div class="inputbox">
                     <mat-icon >mail-outline</mat-icon>
-                    <input type="email" required>
+                    <input type="text" formControlName="username" required>
                     <label for="">Correo</label>
                 </div>
                 <div class="inputbox">
                     <mat-icon >lock-closed-outline</mat-icon>
-                    <input type="password" required>
+                    <input type="password" formControlName="password" required>
                     <label for="">Contraseña</label>
                 </div>
                 <div class="forget">
                     <label for=""><input type="checkbox">Recordar mi  <a href="#">Contraseña</a></label>
                 </div>
-                <button routerLink="/catalogo">Iniciar Sesion</button>
+                    <button>Iniciar Sesion</button>
                 <div class="register">
                     <p>No tiene cuenta? <a routerLink="/registrarse">Registrarse</a></p>
                 </div>

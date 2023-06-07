@@ -14,6 +14,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
+import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
+
+import { HttpClientModule } from '@angular/common/http';
+import { CrearCursoComponent } from './crear-curso/crear-curso.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,8 @@ import {MatCardModule} from '@angular/material/card';
     RegistrarseComponent,
     LoginComponent,
     CatalogoComponent,
-    SidenavComponent
+    SidenavComponent,
+    CrearCursoComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,10 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatMenuModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

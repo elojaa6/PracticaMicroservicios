@@ -8,19 +8,19 @@
   <section>
     <div class="form-box">
         <div class="form-value">
-            <form action="">
+            <form action="" [formGroup]="form" (ngSubmit)="register()">
                 <h2>Registrarse</h2>
                 <div class="inputbox">
                     <mat-icon >mail-outline</mat-icon>
-                    <input type="email" required>
+                    <input type="text" formControlName="username" required>
                     <label for="">Correo</label>
                 </div>
                 <div class="inputbox">
                     <mat-icon >lock-closed-outline</mat-icon>
-                    <input type="password" required>
+                    <input type="password" formControlName="password" required>
                     <label for="">Contraseña</label>
                 </div>
-                <button routerLink="/login">Registrarme</button>
+                <button >Registrarme</button>
                 <div class="register">
                     <p>Tiene cuenta? <a routerLink="/login">Iniciar Session</a></p>
                 </div>

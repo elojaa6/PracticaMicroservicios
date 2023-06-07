@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BookModel } from '../models/curso.model';
 import { CursosService } from '../services/cursos.service';
+import { InscripcionService } from '../services/inscripcion.service';
+import { LocalStorageService } from 'angular-web-storage';
 
 @Component({
   selector: 'app-catalogo',
@@ -9,18 +10,35 @@ import { CursosService } from '../services/cursos.service';
 })
 export class CatalogoComponent implements OnInit  {
 
-  books: any
-
-  
+  curso: any
 
   constructor(
-    public cursoService:CursosService
+    public cursoService: CursosService,
+    public inscripcionService: InscripcionService,
+    private local: LocalStorageService
   ){}
 
   ngOnInit(): void{
-    console.log(this.cursoService.getBooks())
-    this.books = this.cursoService.getBooks();
-    console.log(this.books);
+    this.cargarInformacion()
+  }
+
+  cargarInformacion() {
+    this.cursoService.getAll().subscribe(info => {
+      this.curso = info,
+        console.log(info)
+    },error => {
+      console.log(error)
+    })
+  }
+
+  incribirse(id: string){
+    const value = this.local.get('key');
+    this.inscripcionService.register(id, value).subscribe(info =>{
+      console.log(info)
+    },error => {
+      console.log(error)
+    })
+
   }
 
 }

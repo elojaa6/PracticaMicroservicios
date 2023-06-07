@@ -1,95 +1,30 @@
 import { Injectable } from '@angular/core';
-import { BookModel } from '../models/curso.model';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Catalogo } from '../models/catalogo.model';
+
+
+const catalogoUrl = 'http://localhost:8082/catalogo/'
 
 @Injectable({
   providedIn: 'root'
 })
 export class CursosService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  public getBooks(): BookModel[]{
-    return [
-      {
-        "id": 1,
-        "title": 'Angular Fundamentals',
-        "totalPages": 470,
-        "author": 'Ram Singh',
-        "price":{
-          "currency": "INR",
-          "value": 80
-        }
-      },
-      {
-        "id": 2,
-        "title": 'Angular Fundamentals',
-        "totalPages": 470,
-        "author": 'Ram Singh',
-        "price":{
-          "currency": "INR",
-          "value": 80
-        }
-      },
-      {
-        "id": 3,
-        "title": 'Angular Fundamentals',
-        "totalPages": 470,
-        "author": 'Ram Singh',
-        "price":{
-          "currency": "INR",
-          "value": 80
-        }
-      },
-      {
-        "id": 4,
-        "title": 'Angular Fundamentals',
-        "totalPages": 470,
-        "author": 'Ram Singh',
-        "price":{
-          "currency": "INR",
-          "value": 80
-        }
-      },
-      {
-        "id": 5,
-        "title": 'Angular Fundamentals',
-        "totalPages": 470,
-        "author": 'Ram Singh',
-        "price":{
-          "currency": "INR",
-          "value": 80
-        }
-      },
-      {
-        "id": 6,
-        "title": 'Angular Fundamentals',
-        "totalPages": 470,
-        "author": 'Ram Singh',
-        "price":{
-          "currency": "INR",
-          "value": 80
-        }
-      },
-      {
-        "id": 7,
-        "title": 'Angular Fundamentals',
-        "totalPages": 470,
-        "author": 'Ram Singh',
-        "price":{
-          "currency": "INR",
-          "value": 80
-        }
-      },
-      {
-        "id": 8,
-        "title": 'Angular Fundamentals',
-        "totalPages": 470,
-        "author": 'Ram Singh',
-        "price":{
-          "currency": "INR",
-          "value": 80
-        }
-      },
-    ]
+  ngOnInit() {
+
+  }
+  
+
+  getAll(): Observable<Catalogo[]> {
+    return this.http.get<Catalogo[]>(catalogoUrl+'findAll');
+  }
+
+  crearCurso(crearCursoRequest: any): Observable<any> {
+    return this.http.post<any>(catalogoUrl + "create", crearCursoRequest);
   }
 }
