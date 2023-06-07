@@ -35,14 +35,11 @@
   </nav>
 
     <div class="container">
-      <div class="card" style="width: 18rem" *ngFor="let cur of curso">
+      <div class="card" style="width: 18rem" *ngFor="let cur of inscripcion">
         <img src="../../assets/curso.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{cur.nombre}}</h5>
-          <p class="card-text">Lugar: {{cur.lugar}}</p>
-          <p class="card-text">Fecha: {{cur.fecha}}</p>
-          <p class="card-text">Precio: ${{cur.cantidad}}</p>
-          <a (click)="incribirse(cur.id, cur.nombre)" class="btn btn-primary">Inscribirse</a>
+          <h5 class="card-title">Curso: {{cur.nombreCurso}}</h5>
+          <p class="card-text">User: {{cur.nombreCliente}}</p>
         </div>
       </div>
     </div>

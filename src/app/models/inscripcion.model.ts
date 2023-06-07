@@ -1,4 +1,7 @@
 export class InscripcionModel{
-    nombre?:string
-    apellido?:string
+    nombreCliente?:string
+    clienteid?:string
+    nombreCurso?:string
+    cursoid?:string
+
 }

@@ -31,9 +31,10 @@ export class CatalogoComponent implements OnInit  {
     })
   }
 
-  incribirse(id: string){
+  incribirse(id: string, nombreCurso: string){
     const value = this.local.get('key');
-    this.inscripcionService.register(id, value).subscribe(info =>{
+    const valueName = this.local.get('keyUser');
+    this.inscripcionService.register(valueName, value, nombreCurso, id).subscribe(info =>{
       console.log(info)
     },error => {
       console.log(error)

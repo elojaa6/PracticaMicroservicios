@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
 
 import { HttpClientModule } from '@angular/common/http';
 import { CrearCursoComponent } from './crear-curso/crear-curso.component';
+import { ListInscripcionesComponent } from './list-inscripciones/list-inscripciones.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CrearCursoComponent } from './crear-curso/crear-curso.component';
     LoginComponent,
     CatalogoComponent,
     SidenavComponent,
-    CrearCursoComponent
+    CrearCursoComponent,
+    ListInscripcionesComponent
   ],
   imports: [
     BrowserModule,

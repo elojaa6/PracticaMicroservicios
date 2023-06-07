@@ -47,6 +47,7 @@ export class LoginComponent {
       data => {
         this.router.navigate(['/catalogo'])
         this.local.set('key', data.id);
+        this.local.set('keyUser', data.username);
         console.log(data)},
       error => {
         const errorObject = error; 

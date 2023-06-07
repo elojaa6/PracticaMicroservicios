@@ -34,15 +34,18 @@
       </div>
   </nav>
 
-    <div class="container" >
-      <div class="card" style="width: 18rem;" *ngFor="let incrip of inscripcion">
+    <div class="container">
+      <div class="card" style="width: 18rem" *ngFor="let cur of curso">
         <img src="../../assets/curso.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{incrip.nombre}}</h5>
-          <p class="card-text">{{incrip.apellido}}</p>
+          <h5 class="card-title">{{cur.nombre}}</h5>
+          <p class="card-text">Lugar: {{cur.lugar}}</p>
+          <p class="card-text">Fecha: {{cur.fecha}}</p>
+          <p class="card-text">Precio: ${{cur.cantidad}}</p>
+          <a class="btn btn-primary">Inscribirse</a>
         </div>
       </div>
-    </div>  
+    </div>
     <!-- End Example Code -->
   </body>
 </html>
